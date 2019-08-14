@@ -1,18 +1,15 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
-// const lastName = 'Bob';
-// function greet() {
-//   const firstName = 'Jim';
-//   alert(`The name's ${lastName}, ${firstName} ${lastName}`);
-// }
-// console.log(lastName);
-
-const favAnimal = cat;
-
-function fav() {
-  
+function favFood(dish) {
+  return function() {
+    return `I like to eat ${dish}!`;
+  }
 }
+
+const favZza = favFood("pizza");
+
+console.log(favZza());
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
