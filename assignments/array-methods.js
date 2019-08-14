@@ -90,9 +90,9 @@ console.log(largeShirts);
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
 let ticketPriceTotal = [];
 
-runners.reduce(function(total, donate) {
-  ticketPriceTotal.push(total + donate.donation);
-}, 0);
+runners.reduce((acc, donate) => {
+  ticketPriceTotal.push(acc + runners.donation);
+});
 
 console.log(ticketPriceTotal);
 
@@ -109,17 +109,24 @@ runners.forEach(function(mail) {
 
 console.log(list);
 
-// Problem 2 Donations $100 or more get a get a bobble head.
+// Problem 2. Donations $100 or more get a get a bobble head for thier car dash.
 
 let bobble = [];
 
 runners.filter(function(head) {
   if(head.donation >= 100) {
-    // bobble.push(head.first_name + " " + head.last_name + ". Donation: " + head.donation);
     bobble.push(`${head.first_name} ${head.last_name}. Donation: $${head.donation}`);
   }
 });
 
 console.log(bobble);
 
-// Problem 3
+// Problem 3. Event coordinators felt the donations were too little, so they charged the runners 10 times the original amount without telling them.
+
+let gouge = [];
+
+runners.map(function(jack) {
+  gouge.push(`${jack.first_name} ${jack.last_name}: $${jack.donation * 10}`);
+});
+
+console.log(gouge);
